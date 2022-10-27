@@ -3,9 +3,13 @@ package nvidia
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/AliyunContainerService/gpushare-device-plugin/pkg/kubelet/client"
+	"github.com/IT-YUNMENGZE/gpushare-device-plugin/pkg/kubelet/client"
+	"os"
+	"sort"
+	"time"
+
+	v1 "k8s.io/api/core/v1"
 	log "github.com/golang/glog"
-	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/fields"
@@ -15,9 +19,6 @@ import (
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 	nodeutil "k8s.io/kubernetes/pkg/util/node"
-	"os"
-	"sort"
-	"time"
 )
 
 var (
